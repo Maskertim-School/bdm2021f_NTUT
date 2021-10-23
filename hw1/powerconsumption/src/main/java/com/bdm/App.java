@@ -1,16 +1,11 @@
 package com.bdm;
 
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.logging.Logger;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
-// import org.apache.log4j.Level;
-// import org.apache.log4j.Logger;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -42,7 +37,7 @@ public class App
         JavaSparkContext sparkContext = new JavaSparkContext(conf);
 
         // Load Datasets
-        JavaRDD<String> power = sparkContext.textFile("/tmp/test.txt");
+        JavaRDD<String> power = sparkContext.textFile("/tmp/household_power_consumption.txt");
         String firstline = power.first();
 
         /* Transformations */
@@ -109,28 +104,6 @@ public class App
                 System.out.println("the file is existed, please remove the old file.");
             }
         }
-        // System.out.println("global_active_power's max:"+calculateMax(global_active_power));
-        // // min value
-        // System.out.println("global_active_power's min:"+global_active_power.min(Comparator.naturalOrder()));
-        // // rows of data (i.e., count)
-        // long global_active_power_count = global_active_power.count();
-        // System.out.println("global_active_power's count:"+ global_active_power_count);
-        // // mean of data
-        // double global_active_power_mean = global_active_power.aggregate(0.0, (x, y)-> x+y, (x,y)-> x+y)/(double)global_active_power_count;
-        // System.out.println("global_active_power's mean:"+global_active_power_mean);
-        // // standard deviation of data
-        // double global_active_power_variation = global_active_power.map(x-> Math.pow((x-global_active_power_mean), 2))
-        //                     .aggregate(0.0, (x, y)-> x+y, (x,y)-> x+y);
-        // double global_active_power_standard_deviation = Math.sqrt(global_active_power_variation/(double)global_active_power_count);
-        // System.out.println("global_active_power's standard_deviation:"+global_active_power_standard_deviation);
-        // // Z-score normalize
-        // global_active_power.map(x -> (x - global_active_power_mean) / global_active_power_standard_deviation)
-        //                     .collect();
-        // try{
-        //     global_active_power.coalesce(1).saveAsTextFile("file:////tmp/test_result.txt");
-        // }catch(Exception e){
-        //     System.out.println("the file is existed, please remove the old file.");
-        // }
 
         // if finish, just close the context
         sparkContext.close();

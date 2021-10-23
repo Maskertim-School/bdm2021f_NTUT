@@ -1,4 +1,7 @@
 hw1/.vscode
 hw1/powerconsumption/target
-hw1/household_power_consumption.txt
+hw1/powerconsumption/data/household_power_consumption.txt
 hw1/household_power_consumption.zip
+hw1/processed_data
+hw1/generate_report/gen_report_venv
+hw1/generate_report/reports
