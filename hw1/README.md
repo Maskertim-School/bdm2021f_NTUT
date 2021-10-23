@@ -92,7 +92,7 @@ if want to know how to install them, please refer to **spark_installation** in `
     1. Create a master: `start-master.sh`.
     2. Create a worker to connect to master: `start-worker.sh [your spark url]`.
     3. Then what it looks:
-        ![spark cluster](./pictures/spark web ui show spark cluster.png) 
+        ![spark cluster](./pictures/spark_web_ui_to_show_spark_cluster.png) 
 * If would like to submit your jar file, please use this command:
     `spark-submit --class "com.bdm.App" --master spark://[your spark master ip]:7077 [your path of jar file]`
 
