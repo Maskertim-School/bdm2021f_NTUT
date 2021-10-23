@@ -18,7 +18,7 @@
 1. 3 values: min, max, count
 2. 2 values: mean, standard deviation
 3. 1 file:
-    * Each line: <normalized global active power>, <normalized global reactive power>, <normalized voltage>, and <normalized global intensity>
+    * Each line: ```<normalized global active power>, <normalized global reactive power>, <normalized voltage>, and <normalized global intensity>```
 
 #### Issues needed to deal with
 * Missing values
@@ -79,7 +79,7 @@ if want to know how to install them, please refer to **spark_installation** in `
     * Number of CPU: 4C (CPU) 2T (Thread Per CPU)
 
 #### Spark Cluster Architecture
-![spark architecture](./picture/bigdatamining2021-architecture.png)
+![spark architecture](./pictures/bigdatamining2021-architecture.png)
 
 ### Source code
 * The source code of spark is in `powerconsumption` directory. (Java)
@@ -92,7 +92,7 @@ if want to know how to install them, please refer to **spark_installation** in `
     1. Create a master: `start-master.sh`.
     2. Create a worker to connect to master: `start-worker.sh [your spark url]`.
     3. Then what it looks:
-        ![spark cluster](./picture/spark\ web\ ui\ show\ spark\ cluster.png) 
+        ![spark cluster](./pictures/spark\\ web\\ ui\\ show\\ spark\\ cluster.png) 
 * If would like to submit your jar file, please use this command:
     `spark-submit --class "com.bdm.App" --master spark://[your spark master ip]:7077 [your path of jar file]`
 
